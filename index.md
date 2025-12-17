@@ -17,8 +17,10 @@ Before starting any analysis, it is important to make sure you actually know how
 In order to answer this, I had to choose whether or not I wanted to compare 2025 Soto to 2025 Anthony (which would make direct numeric comparisons easier) or comparing rookie Soto to rookie Anthony, i.e. 2018 Soto to 2025 Anthony. I decided to look at both, with an emphasis on their rookie seasons, because I want the end goal of this analysis to be how Anthony might grow as a player, not just how they currently line up. So, the question became:
 > Does Roman Anthony's plate approach in 2025, at the MLB level, mirror that of Juan Soto in 2018?
 
-To answer this question, we have to specify what a player's approach is. This is an exceptionally complicated question, so I narrowed once again, and considered their decision to swing, given a certain pitch location and type, and the quality of contact or lack thereof. Unfortunately, we can't look at squared-up rate before 2023 because bat speed was not tracked, so I had to consider quality of contact differently. Recall, however, that we are interested in approach rather than results, specifically whether a given player has a "good at-bat" Within quality of contactWe now are trying to answer: 
-> Does Roman Anthony (in the 2025 MLB), when controlling for pitch location and type, swing, chase, and 
+To answer this question, we have to specify what a player's approach is. This is an exceptionally complicated question, so I narrowed once again, and considered their decision to swing, given a certain pitch location and type, and the quality of contact or lack thereof. Unfortunately, we can't look at squared-up rate before 2023 because bat speed was not tracked, so I had to consider quality of contact differently. Recall, however, that we are interested in approach rather than results, specifically whether a given player has a "good at-bat" (Cora, quoted by Rosenthal). So, we examine swing%, chase%, whiff%, and contact%, and since DeRosa cited HardHit%, we will also look at exit velocity. We now are trying to answer: 
+> Does 2025 MLB Roman Anthony swing, chase, whiff, and make contact at the same rate as 2018 MLB Juan Soto after controlling for pitch location and type?
+
+
 ## Similarities
 
 
@@ -26,7 +28,7 @@ To answer this question, we have to specify what a player's approach is. This is
 ### Bad Pitches
 ### Mastery of Zone
 ### Swing Caution
-## Confonuding Factors
+## Confounding Factors
 ### Locations of pitches
 #### Edge
 #### Zone
