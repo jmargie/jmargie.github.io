@@ -1,5 +1,8 @@
 # Roman Anthony vs Juan Soto
 ## Quotes / Motivation
+
+Over the summer, Roman Anthony debuted for the Red Sox, and was immediately impactful, which resulted in lots of buzz! Some of the responses to his play stuck with me for a while because I wasn't sure if I believed the conclusions these articles came to from just a few statistics. 
+
 "Who he reminds me of, it's hard," Cora said, per The Athletic's Ken Rosenthal. "I don't want to say (Barry) Bonds, of course. Probably (Juan) Soto, without the flashiness, early on. It's a good at-bat. He's not going to chase. Even when he doesn't get hits, you're like, holy s---, that's a good at-bat" (SOURCE)
 
 "Anthony is averaging 4.25 pitches per plate appearance," Rosenthal wrote. "His walk rate is 14.6 percent. In those categories ... he would rank among the league leaders if he had enough playing time." 
@@ -14,13 +17,13 @@ So, let's take a look! Do those two statistics actually represent their style du
 Before starting any analysis, it is important to make sure you actually know how to answer the question you are asking. For me, that is 
 > Does Roman Anthony's plate approach at the MLB level mirror that of Juan Soto?
 
-In order to answer this, I had to choose whether or not I wanted to compare 2025 Soto to 2025 Anthony (which would make direct numeric comparisons easier) or comparing rookie Soto to rookie Anthony, i.e. 2018 Soto to 2025 Anthony. I decided to look at both, with an emphasis on their rookie seasons, because I want the end goal of this analysis to be how Anthony might grow as a player, not just how they currently line up. So, the question became:
+In order to answer this, I had to choose whether or not I wanted to compare 2025 Soto to 2025 Anthony (which would make direct numeric comparisons easier) or comparing rookie Soto to rookie Anthony, i.e. 2018 Soto to 2025 Anthony. I decided to look at both, with an emphasis on their rookie seasons, because I want the end goal of this analysis to be how Anthony might grow as a player, not just how they currently line up. Also, Cora specifically compares him to "early" Juan Soto. So, the question became:
 > Does Roman Anthony's plate approach in 2025, at the MLB level, mirror that of Juan Soto in 2018?
 
 To answer this question, we have to specify what a player's approach is. This is an exceptionally complicated question, so I narrowed once again, and considered their decision to swing, given a certain pitch location and type, and the quality of contact or lack thereof. Unfortunately, we can't look at squared-up rate before 2023 because bat speed was not tracked, so I had to consider quality of contact differently. Recall, however, that we are interested in approach rather than results, specifically whether a given player has a "good at-bat" (Cora, quoted by Rosenthal). So, we examine swing%, chase%, whiff%, and contact%, and since DeRosa cited HardHit%, we will also look at exit velocity. We now are trying to answer: 
-> Does 2025 MLB Roman Anthony swing, chase, whiff, and make contact at the same rate as 2018 MLB Juan Soto after controlling for pitch location and type?
+> Does 2025 MLB Roman Anthony swing, chase, whiff, and make contact at the same rate as 2018 MLB Juan Soto after controlling for pitch location and type, and normalizing across seasons?
 
-
+I am specifically interested in swing percentage because DeRosa mentioned chase percentage in his tweet, but chase percentage is a subset of swing percentage. It is somewhat misleading to say that Anthony has a low chase percentage because he has a good eye for the zone without noting that he also has a low swing percentage. 
 ## Similarities
 
 
