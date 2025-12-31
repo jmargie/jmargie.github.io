@@ -24,22 +24,87 @@ To answer this question, we have to specify what a player's approach is. This is
 > Does 2025 MLB Roman Anthony swing, chase, whiff, and make contact at the same rate as 2018 MLB Juan Soto after controlling for pitch location and type, and normalizing across seasons?
 
 I am specifically interested in swing percentage because DeRosa mentioned chase percentage in his tweet, but chase percentage is a subset of swing percentage. It is somewhat misleading to say that Anthony has a low chase percentage because he has a good eye for the zone without noting that he also has a low swing percentage. 
-## Similarities
 
 
-## Causes
-### Bad Pitches
-### Mastery of Zone
-### Swing Caution
-## Confounding Factors
-### Locations of pitches
-#### Edge
-#### Zone
-### Pitch Mix
-## When do they swing?
-### Location Distribution
-#### Whiff
-### Pitch type Swinging
-#### Whiff
-### Combination?
-## Recommendations & Conclusion
+
+TEST: <table>
+  <caption>Difference-in-Differences Results by Zone and Metric</caption>
+  <thead>
+    <tr>
+      <th>Zone</th>
+      <th>Metric</th>
+      <th>DiD Estimate</th>
+      <th>95% CI</th>
+      <th>% Significant Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Heart</td>
+      <td>Contact Probability</td>
+      <td><b style="color:black;">-0.019 ●</b></td>
+      <td>[-0.023, -0.016]</td>
+      <td>25.3%</td>
+    </tr>
+    <tr>
+      <td>Shadow</td>
+      <td>Contact Probability</td>
+      <td><b style="color:black;">-0.026 ●</b></td>
+      <td>[-0.034, -0.017]</td>
+      <td>53.2%</td>
+    </tr>
+    <tr>
+      <td>Waste</td>
+      <td>Contact Probability</td>
+      <td><b style="color:black;">0.033 ●</b></td>
+      <td>[0.029, 0.037]</td>
+      <td>23.7%</td>
+    </tr>
+    <tr>
+      <td>Heart</td>
+      <td>Exit Velocity</td>
+      <td><b style="color:black;">-0.709 ●</b></td>
+      <td>[-0.796, -0.622]</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Shadow</td>
+      <td>Exit Velocity</td>
+      <td><b style="color:black;">0.420 ●</b></td>
+      <td>[0.336, 0.504]</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Waste</td>
+      <td>Exit Velocity</td>
+      <td><b style="color:black;">4.124 ●</b></td>
+      <td>[4.029, 4.219]</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Heart</td>
+      <td>Swing Probability</td>
+      <td><b style="color:black;">-0.074 ●</b></td>
+      <td>[-0.075, -0.073]</td>
+      <td>93.8%</td>
+    </tr>
+    <tr>
+      <td>Shadow</td>
+      <td>Swing Probability</td>
+      <td><b style="color:black;">-0.045 ●</b></td>
+      <td>[-0.047, -0.043]</td>
+      <td>22.8%</td>
+    </tr>
+    <tr>
+      <td>Waste</td>
+      <td>Swing Probability</td>
+      <td><b style="color:black;">0.009 ●</b></td>
+      <td>[0.009, 0.010]</td>
+      <td>8.1%</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
