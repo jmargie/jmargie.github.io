@@ -92,8 +92,8 @@ The next step was creating prediction tables to granularize the data, then doing
 ![Contact DID Effect Zones](figures/02_zone_effects_contact_filteredSOLO.png)
 ![Contact DID Effect Categories](figures/02_zone_effects_contact_filtered_categories.png) 
 
-### Bar Graph Comparisons
-#### Swinging
+## Bar Graph Comparisons
+### Swinging
 ![alt text](figures/03_player_effects_swing_filtered_categories.png) 
 ![alt text](figures/03_player_effects_swing_filteredSOLO.png) 
 ### Contact
