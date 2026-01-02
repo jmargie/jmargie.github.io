@@ -110,21 +110,123 @@ The next step was creating prediction tables to granularize the data, then doing
 ![alt text](figures/04_summary_table_contact_filteredSOLO.png) 
  
 
-
-
-
-### More Summary Tables for Exact Numbers
-| **pitch category** | **zone** | **DiD mean**          | **DiD SE**           | **Soto mean**         | **Anthony mean**      | **CI low**           | **CI high**           | **significance** |
-|--------------------|----------|-----------------------|----------------------|-----------------------|-----------------------|----------------------|-----------------------|---------|
-| **fastball**       | Heart    | -0.14367 | 0.03313   | 0.00453  | -0.13913  | -0.20863   | -0.07872  | TRUE    |
-| **fastball**       | Shadow   | -0.11350  | 0.04388 | -0.02840  | -0.14190  | -0.19952 | -0.02748 | TRUE    |
-| **fastball**       | Chase    | -0.02902 | 0.03337 | -0.04112 | -0.07015 | -0.09444 | 0.03638   | FALSE   |
-| **breaking**       | Heart    | 0.09020   | 0.04204 | -0.15696 | -0.06675 | 0.00779  | 0.17261   | TRUE    |
-| **breaking**       | Shadow   | 0.13439   | 0.05195 | -0.20824  | -0.07384  | 0.03255  | 0.23624   | TRUE    |
-| **breaking**       | Chase    | 0.08213   | 0.03862  | -0.12769  | -0.04555  | 0.00643 | 0.15784  | TRUE    |
-| **offspeed**       | Heart    | -0.03354 | 0.04073  | -0.01680  | -0.05035 | -0.11338   | 0.04628   | FALSE   |
-| **offspeed**       | Shadow   | -0.00662  | 0.05995  | -0.05528  | -0.06190   | -0.12412  | 0.11088   | FALSE   |
-| **offspeed**       | Chase    | 0.02582   | 0.05599  | -0.07339  | -0.04757  | -0.08391 | 0.13556   | FALSE   |
+### More Summary Tables for Exact Numbers (Calculated from Different Models)
+<table>
+  <thead>
+    <tr>
+      <th>pitch category</th>
+      <th>zone</th>
+      <th>DiD mean</th>
+      <th>DiD SE</th>
+      <th>Soto mean</th>
+      <th>Anthony mean</th>
+      <th>CI low</th>
+      <th>CI high</th>
+      <th>significance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>fastball</strong></td>
+      <td>Heart</td>
+      <td>-0.14367</td>
+      <td>0.03313</td>
+      <td>0.00453</td>
+      <td>-0.13913</td>
+      <td>-0.20863</td>
+      <td>-0.07872</td>
+      <td>TRUE</td>
+    </tr>
+    <tr>
+      <td><strong>fastball</strong></td>
+      <td>Shadow</td>
+      <td>-0.11350</td>
+      <td>0.04388</td>
+      <td>-0.02840</td>
+      <td>-0.14190</td>
+      <td>-0.19952</td>
+      <td>-0.02748</td>
+      <td>TRUE</td>
+    </tr>
+    <tr>
+      <td><strong>fastball</strong></td>
+      <td>Chase</td>
+      <td>-0.02902</td>
+      <td>0.03337</td>
+      <td>-0.04112</td>
+      <td>-0.07015</td>
+      <td>-0.09444</td>
+      <td>0.03638</td>
+      <td>FALSE</td>
+    </tr>
+    <tr>
+      <td><strong>breaking</strong></td>
+      <td>Heart</td>
+      <td>0.09020</td>
+      <td>0.04204</td>
+      <td>-0.15696</td>
+      <td>-0.06675</td>
+      <td>0.00779</td>
+      <td>0.17261</td>
+      <td>TRUE</td>
+    </tr>
+    <tr>
+      <td><strong>breaking</strong></td>
+      <td>Shadow</td>
+      <td>0.13439</td>
+      <td>0.05195</td>
+      <td>-0.20824</td>
+      <td>-0.07384</td>
+      <td>0.03255</td>
+      <td>0.23624</td>
+      <td>TRUE</td>
+    </tr>
+    <tr>
+      <td><strong>breaking</strong></td>
+      <td>Chase</td>
+      <td>0.08213</td>
+      <td>0.03862</td>
+      <td>-0.12769</td>
+      <td>-0.04555</td>
+      <td>0.00643</td>
+      <td>0.15784</td>
+      <td>TRUE</td>
+    </tr>
+    <tr>
+      <td><strong>offspeed</strong></td>
+      <td>Heart</td>
+      <td>-0.03354</td>
+      <td>0.04073</td>
+      <td>-0.01680</td>
+      <td>-0.05035</td>
+      <td>-0.11338</td>
+      <td>0.04628</td>
+      <td>FALSE</td>
+    </tr>
+    <tr>
+      <td><strong>offspeed</strong></td>
+      <td>Shadow</td>
+      <td>-0.00662</td>
+      <td>0.05995</td>
+      <td>-0.05528</td>
+      <td>-0.06190</td>
+      <td>-0.12412</td>
+      <td>0.11088</td>
+      <td>FALSE</td>
+    </tr>
+    <tr>
+      <td><strong>offspeed</strong></td>
+      <td>Chase</td>
+      <td>0.02582</td>
+      <td>0.05599</td>
+      <td>-0.07339</td>
+      <td>-0.04757</td>
+      <td>-0.08391</td>
+      <td>0.13556</td>
+      <td>FALSE</td>
+    </tr>
+  </tbody>
+</table>
 
 <table>
   <caption>Difference-in-Differences Results by Zone and Metric</caption>
