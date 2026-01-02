@@ -31,14 +31,13 @@ First, instead of running a power analysis (to make sure I had enough data, beca
 I decided to do my analysis in R rather than Python (which I have more experience with) because I both wanted to get more practice with R and because it has a very straightforward library for [Generalized Additive Models](https://m-clark.github.io/generalized-additive-models/case_for_gam.html) (GAMs) which essentially piece together a bunch of possibly non-linear relationships over a given space.  This works better than linear and polynomial models, even when piecewise, because it is smooth and allows for different relationships over the surface, while ensuring the resulting model is still consistent. I also used the BAM model from the mgcv library in R because it is a modified GAM intended for larger datasets, and there are a lot of pitches thrown in the MLB over a season.
 <details>
 <summary>If you want more information about the models, click here! </summary>
-
-
-If you have taken linear algebra, you can think of the model fitting as choosing all of our partial models from the same basis, i.e. a minimal generating set. For example, all of the formulas are some form of cubic equation, but they do not have to be the same one over the whole space. Then, we piece them together for a smooth result. The link above provides an example of a polynomial spline, which looks at each section of the data independently, then (intuitively, or, as my Mathematical Logic professor would say, morally) slides them up or down to 'match' the end points. The GAM is more complicated than this due to penalized regression (which I do not know how to do yet).
+<br>
+If you have taken linear algebra, you can think of the model fitting as choosing all of our partial models from the same basis, i.e. a minimal generating set. For example, all of the formulas are some form of cubic equation, but they do not have to be the same one over the whole space. Then, we piece them together for a smooth result. The link above provides an example of a polynomial spline, which looks at each section of the data independently, then (intuitively, or, as my one of my math professors would say, morally) slides them up or down to 'match' the end points. The GAM is more complicated than this due to penalized regression (which I do not know how to do yet).
 
 </details>
+<br>
 
-
-I also ran this model in a few ways: (1) recognizing the pitcher and game as an effect on each pitch, which could overfit the model, and (2) not considering each pitcher/game on the resulting decision, which could prioritize certain pitchers/games for the resulting predictions, based on sample size, as well as (3) considering the type of pitch (which again, could overfit the model and slowed down the processing significantly). The results were all approximately the same, but certain numbers may not align exactly because of this. I decided against making a model specifically for whiffs, because contact predicated on swings is just the negative, and the heatmaps were more visually coherent. 
+I ran this model in a few ways: (1) recognizing the pitcher and game as an effect on each pitch, which could overfit the model, and (2) not considering each pitcher/game on the resulting decision, which could prioritize certain pitchers/games for the resulting predictions, based on sample size, as well as (3) considering the type of pitch (which again, could overfit the model and slowed down the processing significantly). The results were all approximately the same, but certain numbers may not align exactly because of this. I recognize that this is not best practice but since this is just a project for fun, I didn't worry too much. I differentiated these results with different colors in the graphs. I also decided against making a model specifically for whiffs, because contact predicated on swings is just the negative, and the heatmaps were more visually coherent. 
 
 For example, one of the swing models looked like this: 
 ```r
@@ -67,10 +66,63 @@ m_swing <- bam(
 )
 ```
 
+The next step was creating prediction tables to granularize the data, then doing differences-in-differences analyses to regularize Roman Anthony to 2025 hitters and Juan Soto to 2018 hitters, and compare the difference between their normalized statistics. 
 
+## Results
+### Heatmaps
+#### Swinging
+![Swing Probability DiD](figures/plot_04_heatmap_swing.png)
+![Swing Probability Heatmap](figures/06_heatmap_uncompared_swing_filtered_categories.png)
+> Note: these two graphs were developed by slightly different models
 
+#### Contact
+![Contact Probability DiD](figures/plot_05_heatmap_contact.png)
+![Contact Probability Heatmap](figures/06_heatmap_uncompared_contact_filtered_categories.png)
 
+### DiD Effects
+#### Swinging
+![Swing DID Effect Zones](figures/02_zone_effects_swing_filteredSOLO.png) 
+![Swing DID Effect Categories](figures/02_zone_effects_swing_filtered_categories.png)
+
+#### Contact 
+![Contact DID Effect Zones](figures/02_zone_effects_contact_filteredSOLO.png)
+![Contact DID Effect Categories](figures/02_zone_effects_contact_filtered_categories.png) 
+
+### Bar Graph Comparisons
+#### Swinging
+![alt text](figures/03_player_effects_swing_filtered_categories.png) 
+![alt text](figures/03_player_effects_swing_filteredSOLO.png) 
+#### Contact
+![alt text](figures/03_player_effects_contact_filtered_categories.png) 
+![alt text](figures/03_player_effects_contact_filteredSOLO.png) 
+
+### Summary Tables
+#### Swinging
+![alt text](figures/04_summary_table_swing_filteredSOLO.png)
+![alt text](figures/04_summary_table_swing_filtered_categories.png) 
+
+#### Contact
+![alt text](figures/04_summary_table_contact_filtered_categories.png)
+![alt text](figures/04_summary_table_contact_filteredSOLO.png) 
+ 
+
+### Exit Velocity
+![Exit Velocity Did](figures/plot_06_heatmap_ev.png)
 NEXT STEP omnibus test for pattern
+
+
+### More Summary Tables for Exact Numbers
+| **pitch category** | **zone** | **DiD mean**          | **DiD SE**           | **Soto mean**         | **Anthony mean**      | **CI low**           | **CI high**           | **significance** |
+|--------------------|----------|-----------------------|----------------------|-----------------------|-----------------------|----------------------|-----------------------|---------|
+| **fastball**       | Heart    | -0.14367 | 0.03313   | 0.00453  | -0.13913  | -0.20863   | -0.07872  | TRUE    |
+| **fastball**       | Shadow   | -0.11350  | 0.04388 | -0.02840  | -0.14190  | -0.19952 | -0.02748 | TRUE    |
+| **fastball**       | Chase    | -0.02902 | 0.03337 | -0.04112 | -0.07015 | -0.09444 | 0.03638   | FALSE   |
+| **breaking**       | Heart    | 0.09020   | 0.04204 | -0.15696 | -0.06675 | 0.00779  | 0.17261   | TRUE    |
+| **breaking**       | Shadow   | 0.13439   | 0.05195 | -0.20824  | -0.07384  | 0.03255  | 0.23624   | TRUE    |
+| **breaking**       | Chase    | 0.08213   | 0.03862  | -0.12769  | -0.04555  | 0.00643 | 0.15784  | TRUE    |
+| **offspeed**       | Heart    | -0.03354 | 0.04073  | -0.01680  | -0.05035 | -0.11338   | 0.04628   | FALSE   |
+| **offspeed**       | Shadow   | -0.00662  | 0.05995  | -0.05528  | -0.06190   | -0.12412  | 0.11088   | FALSE   |
+| **offspeed**       | Chase    | 0.02582   | 0.05599  | -0.07339  | -0.04757  | -0.08391 | 0.13556   | FALSE   |
 
 <table>
   <caption>Difference-in-Differences Results by Zone and Metric</caption>
