@@ -38,16 +38,41 @@ If you have taken linear algebra, you can think of the model fitting as choosing
 </details>
 
 
-I also ran this model in two ways: (1) recognizing the pitcher and game as an effect on each pitch, which could overfit the model, and (2) not considering each pitcher/game on the resulting decision, which could prioritize certain pitchers/games for the resulting predictions, based on sample size. I decided against making a model specifically for whiffs, because contact predicated on swings is just the negative, and the heatmaps were more visually coherent.
+I also ran this model in a few ways: (1) recognizing the pitcher and game as an effect on each pitch, which could overfit the model, and (2) not considering each pitcher/game on the resulting decision, which could prioritize certain pitchers/games for the resulting predictions, based on sample size, as well as (3) considering the type of pitch (which again, could overfit the model and slowed down the processing significantly). The results were all approximately the same, but certain numbers may not align exactly because of this. I decided against making a model specifically for whiffs, because contact predicated on swings is just the negative, and the heatmaps were more visually coherent. 
 
-
+For example, one of the swing models looked like this: 
+```r
+m_swing <- bam(
+    swing ~ batter_id +
+    s(plate_x, plate_z, k = 20) +
+    s(plate_x, plate_z, by = batter_id, k = 10, id = 1) +
+    s(pitcher_id, bs = "re") +
+    s(game_id, bs = "re"),
+    data = df,
+    family = binomial(),
+    method = "fREML",
+    discrete = TRUE,
+    select = TRUE
+  )
+```
+and another: 
+```r
+m_swing <- bam(
+  swing ~ batter_flag +
+          pitch_category +
+          s(plate_x, plate_z, k = 50),
+  data = df,
+  family = binomial(),
+  discrete = TRUE
+)
+```
 
 
 
 
 NEXT STEP omnibus test for pattern
 
-TEST: <table>
+<table>
   <caption>Difference-in-Differences Results by Zone and Metric</caption>
   <thead>
     <tr>
@@ -124,7 +149,6 @@ TEST: <table>
     </tr>
   </tbody>
 </table>
-
 
 
 
