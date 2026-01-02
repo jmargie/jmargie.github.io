@@ -68,27 +68,27 @@ m_swing <- bam(
 
 The next step was creating prediction tables to granularize the data, then doing differences-in-differences analyses to regularize Roman Anthony to 2025 hitters and Juan Soto to 2018 hitters, and compare the difference between their normalized statistics. 
 
-## Results
-### Heatmaps
-#### Swinging
+# Results
+## Heatmaps
+### Swinging
 ![Swing Probability DiD](figures/plot_04_heatmap_swing.png)
 ![Swing Probability Heatmap](figures/06_heatmap_uncompared_swing_filtered_categories.png)
 > Note: these two graphs were developed by slightly different models
 
-#### Contact
+### Contact
 ![Contact Probability DiD](figures/plot_05_heatmap_contact.png)
 ![Contact Probability Heatmap](figures/06_heatmap_uncompared_contact_filtered_categories.png)
 
-#### Exit Velocity
+### Exit Velocity
 ![Exit Velocity Did](figures/plot_06_heatmap_ev.png)
  I added in exit velocity at the end as an exploratory analysis, so I do not have the same graphs for it as everything else. But, this is nonetheless interesting. Rookie Anthony is getting much more power in his contact that Rookie Soto. Maybe this is because of age? Maybe Anthony is not swinging at pitches he can't get good contact on? Unfortauntely, bat tracking was not implemented in 2018, which means we can't look at their squared-up rates, but in 2025, Roman Anthony had a 26.7% squared-up rate (good for 60th percentile, if he was qualified) and Juan Soto clocked in at 32.5% (92nd percentile), despite Anthony having higher bat speed, solid contact% and barrel%. Note that the squared-up rate is looking at squared-up per swing, not per contact, which disadvantages Anthony due to his (statistically significantly!) higher whiff rate. 
 
-### DiD Effects
-#### Swinging
+## DiD Effects
+### Swinging
 ![Swing DID Effect Zones](figures/02_zone_effects_swing_filteredSOLO.png) 
 ![Swing DID Effect Categories](figures/02_zone_effects_swing_filtered_categories.png)
 
-#### Contact 
+### Contact 
 ![Contact DID Effect Zones](figures/02_zone_effects_contact_filteredSOLO.png)
 ![Contact DID Effect Categories](figures/02_zone_effects_contact_filtered_categories.png) 
 
@@ -96,21 +96,21 @@ The next step was creating prediction tables to granularize the data, then doing
 #### Swinging
 ![alt text](figures/03_player_effects_swing_filtered_categories.png) 
 ![alt text](figures/03_player_effects_swing_filteredSOLO.png) 
-#### Contact
+### Contact
 ![alt text](figures/03_player_effects_contact_filtered_categories.png) 
 ![alt text](figures/03_player_effects_contact_filteredSOLO.png) 
 
-### Summary Tables
-#### Swinging
+## Summary Tables
+### Swinging
 ![alt text](figures/04_summary_table_swing_filteredSOLO.png)
 ![alt text](figures/04_summary_table_swing_filtered_categories.png) 
 
-#### Contact
+### Contact
 ![alt text](figures/04_summary_table_contact_filtered_categories.png)
 ![alt text](figures/04_summary_table_contact_filteredSOLO.png) 
  
 
-### More Summary Tables for Exact Numbers (Calculated from Different Models)
+## More Summary Tables for Exact Numbers (Calculated from Different Models)
 <table>
   <thead>
     <tr>
