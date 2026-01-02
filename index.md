@@ -228,6 +228,8 @@ The next step was creating prediction tables to granularize the data, then doing
   </tbody>
 </table>
 
+
+This table looks at significance slightly differently. The filled in circle indicates significance. The significant area indicates if the region of the surface which makes the estimate significant is large, or if the fewer significant points are just, exceptionally significant. It's another way of thinking about this type of analysis, and I'm not sure if I am as confident in the results.
 <table>
   <caption>Difference-in-Differences Results by Zone and Metric</caption>
   <thead>
