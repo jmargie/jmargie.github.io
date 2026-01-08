@@ -51,7 +51,7 @@
         }
         
         main {
-            margin-left: 230px;
+            margin-left: 150px;
         }
         
         h1 {
@@ -102,12 +102,12 @@
         }
         
         img {
-            max-width: 100%;
+            max-width: 120%;
             height: auto;
             display: block;
             margin: 20px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            <!--border: 1px solid #ddd;
+            border-radius: 4px;-->
         }
         
         table {
