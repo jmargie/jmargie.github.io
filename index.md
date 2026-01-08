@@ -51,7 +51,7 @@
         }
         
         main {
-            margin-left: 260px;
+            margin-left: 230px;
         }
         
         h1 {
@@ -147,7 +147,7 @@
         
         summary {
             cursor: pointer;
-            color: #0056b3;
+            <!--color: #0056b3;-->
         }
         
         .contact-info {
