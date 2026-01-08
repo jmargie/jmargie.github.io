@@ -1,16 +1,18 @@
+Julia Margie --- julialmargie@gmail.com --- jmargie@uchicago.edu
 # Roman Anthony vs Juan Soto
 ## Quotes / Motivation
 
 Over the summer, Roman Anthony debuted for the Red Sox, and was immediately impactful, which resulted in lots of buzz. Some of the responses to his play stuck with me for a while because I wasn't sure if I believed the conclusions these articles came to from just a few statistics. 
 
-"Who he reminds me of, it's hard," Cora said, per The Athletic's Ken Rosenthal. "I don't want to say (Barry) Bonds, of course. Probably (Juan) Soto, without the flashiness, early on. It's a good at-bat. He's not going to chase. Even when he doesn't get hits, you're like, holy s---, that's a good at-bat" (SOURCE)
+"Who he reminds me of, it's hard," Alex Cora said "I don't want to say (Barry) Bonds, of course. Probably (Juan) Soto, without the flashiness, early on. It's a good at-bat. He's not going to chase. Even when he doesn't get hits, you're like, holy s---, that's a good at-bat" (Rosenthal, Ken. 2025. “Red Sox Rookie Roman Anthony Has Passed Every Major-League Test so Far. Now He Takes on Yankee Stadium.” The New York Times, August 21. https://www.nytimes.com/athletic/6565795/2025/08/21/roman-anthony-red-sox-yankees/.)
 
-"Anthony is averaging 4.25 pitches per plate appearance," Rosenthal wrote. "His walk rate is 14.6 percent. In those categories ... he would rank among the league leaders if he had enough playing time." 
-(SOURCE)
+"Anthony is averaging 4.25 pitches per plate appearance," Rosenthal wrote. "His walk rate is 14.6 percent. In those categories ... he would rank among the league leaders if he had enough playing time." (Keane, Colin. 2025. “Alex Cora Compares Red Sox Star To Juan Soto, With A Disclaimer.” NESN.Com, August 21. https://nesn.com/2025/08/alex-cora-compares-red-sox-star-to-juan-soto-with-a-disclaimer/.)
 
-"Players to rank in 95th percentile in hard-hit percentage and chase percentage in 2025, there's two of them. It's Juan Soto and Roman Anthony," Mark DeRosa shared on "MLB Central." (SOURCE)
-
-It is easy to mislead people with statistics. I don't think the above people are attempting to mislead anyone, but comparing anyone to Juan Soto is a big deal! That changes a team! (Despite the 2025 Mets, unfortunately). Anthony is about my age, and despite the data not supporting it, I instinctually am fascinated by high walk rates in younger players (according to statcast, the relationship between age and bb% has an r2 of 0.01). Also, a recent mlb.com article listed a lot of these statistics as reasons the Red Sox should be optimistic about next year, and I am nothing if not a pessimist about the Yankees' chances in the AL East, but I'd like to be a realistic fan. If Anthony is actually a game-changing player like Soto, I'd like to regulate my expectations about the upcoming season.
+"Players to rank in 95th percentile in hard-hit percentage and chase percentage in 2025, there's two of them. It's Juan Soto and Roman Anthony," Mark DeRosa shared on "MLB Central." 
+ (Crisafulli, Owen. 2025. “Roman Anthony Finds Himself In Exclusive Company Alongside Juan Soto.” NESN.Com, August 12. https://nesn.com/2025/08/roman-anthony-exclusive-company-juan-soto/.)
+ 
+ 
+It is easy to mislead people with statistics, especially when cherry-picked. I don't think the above people are attempting to mislead anyone, but comparing anyone to Juan Soto is a big deal! That changes a team! (Despite the 2025 Mets, unfortunately). Anthony is about my age, and despite the data not supporting it, I instinctually am fascinated by high walk rates in younger players (according to statcast, the relationship between age and BB% in 2025 has an r2 of 0.01). Also, a recent ESPN article listed a lot of these statistics--highlighting the walk rate--as reasons the Red Sox should be optimistic about next year, and I am nothing if not a pessimist about the Yankees' chances in the AL East, but I'd like to be a realistic fan (ESPN.Com. 2025. “The Number That Will Decide 2026 for All 15 American League Teams.” December 29. https://www.espn.com/mlb/story/_/id/47336183/mlb-2026-predictions-american-league-yankees-red-sox-blue-jays-tigers-mariners.). If Anthony is actually a game-changing player like Soto, I'd like to regulate my expectations about the upcoming season.
 
 So, let's take a look! Do those two statistics actually represent their style during a plate appearance? Is Roman Anthony the next Juan Soto?
 ### Planning
@@ -93,23 +95,29 @@ These graphs begin to provide significance for the prior analysis. Note that if 
 ### Swinging
 In the heart of the zone, Anthony is significantly less likely to swing. 
 ![Swing DID Effect Zones](figures/02_zone_effects_swing_filteredSOLO.png) 
-For breaking balls, Anthony is more likely to swing, regardless of zone, and for fastballs, Soto is more likely in the heart and chase areas. There is an interesting pattern among pitch categories across zones (where fastball has the highest liklihood for Soto to swing, then offspeed, and breaking last. It could be interesting to run an omnibus test to see if these patterns are significant. 
+For breaking balls, Anthony is more likely to swing, regardless of zone, and for fastballs, Soto is more likely in the heart and chase areas. There is an interesting pattern among pitch categories across zones (where fastball has the highest liklihood for Soto to swing, then offspeed, and breaking last. Future work could be to run an omnibus test to see if these patterns are significant. 
 ![Swing DID Effect Categories](figures/02_zone_effects_swing_filtered_categories.png)
 
 ### Contact 
-We have no significance regarding contact. We again see a similar pattern from above, though, where the avera
+We have no significance regarding contact. We again see a similar pattern from above, though, where the average liklihood of contact for fastball and offspeed pitches is lower than breaking pitches. Note too that the 95% CI incrases in size with chase and shadow zone pitches because there is less data for contact in these regions. This makes sense--if players swing at pitches outside of the zone less, there will be be a smaller sample size than the pitches swung at inside of the zone (where you get a strike regardless of your swing).
 ![Contact DID Effect Zones](figures/02_zone_effects_contact_filteredSOLO.png)
 ![Contact DID Effect Categories](figures/02_zone_effects_contact_filtered_categories.png) 
 
 ## Bar Graph Comparisons
+I find it useful to look at the same data in different ways, which is why I included these graphs too. You can see where the differences shown in the prior graphs come from (i.e. Soto is slightly more likely than league average in 2018 to swing at a fastball in the heart of the zone, but Anthony is much less likely). These graphs should be understood in the context of the prior graphs and later tables since they do not mark significance. Below each graph, I note which parts are statistically significant.
 ### Swinging
-![alt text](figures/03_player_effects_swing_filtered_categories.png) 
 ![alt text](figures/03_player_effects_swing_filteredSOLO.png) 
+> significance present in "heart" and "shadow"
+![alt text](figures/03_player_effects_swing_filtered_categories.png) 
+> significance present in "fastball:heart", "fastball:shadow", "breaking:heart", "breaking:shadow", "breaking:chase"
+
 ### Contact
+There is no statistical significance in these graphs. This makes sense: look at the y-axis scale, in contrast to that of the swinging graphs. For contact, percentage differences to league average per zone lies between -6% and 2%, whereas in swinging liklihood, it ranges from ~0% to over -20%. 
 ![alt text](figures/03_player_effects_contact_filtered_categories.png) 
 ![alt text](figures/03_player_effects_contact_filteredSOLO.png) 
 
 ## Summary Tables
+Just another way of presenting the same data. 
 ### Swinging
 ![alt text](figures/04_summary_table_swing_filteredSOLO.png)
 ![alt text](figures/04_summary_table_swing_filtered_categories.png) 
@@ -120,6 +128,8 @@ We have no significance regarding contact. We again see a similar pattern from a
  
 
 ## More Summary Tables for Exact Numbers (Calculated from Different Models)
+DiD mean: average difference betwen Soto and Anthony's differences from the league average
+DiD SE: standard error. "standard deviation of sampling distribution" (per wikipedia). When looking at significance, we can take a "sampling population" which is like testing a lot of slightly different populations to see how uniform our whole population is. The standard error measures how much the mean of each of these sampling populations differs from the mean of the whole population. This lets us calculate the confidence intervals.
 <table>
   <thead>
     <tr>
