@@ -76,32 +76,40 @@ The next step was creating prediction tables to granularize the data, then doing
 ## Heatmaps
 ### Swinging
 The heatmaps show that Soto swung more than Anthony -- this is not necessarily significant. This is particularly true in the shadow of the top of the strike zone. These graphs also act as a sanity check for my models, and pass the eye-test (though, like in baseball, the eye-test does not necessarily align with the advanced numbers in statistics! In this case, though, it seems to).
+
 ![Swing Probability DiD](figures/plot_04_heatmap_swing.png)
  One possible limitation of this is that the strike zone will be slightly different for each batter, and the rectangle marked is just the average strike zone (vertically). Both Soto and Anthony do have similar strike zone boundaries, as set by the official scorer and StatCast. Both Soto and Anthony seem to swing less than average in the bottom of the zone, but the 2025 and 2018 league average swing locations are visually nearly identical. 
+ 
 ![Swing Probability Heatmap](figures/06_heatmap_uncompared_swing_filtered_categories.png)
 > Note: these two graphs were developed by slightly different models
 
 ### Contact
 Soto also made contact at a higher rate than Anthony in the bottom of the zone. This is interesting to me because Anthony swung more in this part of the zone. This seems to imply that Soto is reading pitches in the bottom of the zone better than Anthony. I did not run significance testing for top/bottom of zone, but that would be an interesting next step. It seems likely that Soto's nearly 20% higher chance at making contact around the lower edge of the zone would be significant. If I had to give Anthony advice on where to focus (if he wants to be more like Soto), I would tell him to practice making contact with pitches around his knees. Given that Soto swings less but makes more contact, it is likely that he is reading the pitches better than Anthony. Another place for further research would be the foul% and xWOBA of these contact events. Maybe Anthony's contact is more useful!
+
 ![Contact Probability DiD](figures/plot_05_heatmap_contact.png)
 
 I think this graph is affected by the height differences of MLB players. Soto and Anthony are both on the taller side for batters, and the lower edge of the strike zone is obviously dependant on the height of a player's knee. Visually, Soto and Anthony seem to make less contact (given a swing) than average around the bottom edge of the zone, meaning they whiff more than average near their knees. A good next step for this analysis would be looking at pitches by their distance from the bottom of the declared strike zone, rather than the ground, as StatCast provides. Note that these numbers are not significant, as per later graphs and tables.
+
 ![Contact Probability Heatmap](figures/06_heatmap_uncompared_contact_filtered_categories.png)
 
 ### Exit Velocity
 ![Exit Velocity Did](figures/plot_06_heatmap_ev.png)
- I added in exit velocity at the end as an exploratory analysis, so I do not have the same graphs for it as everything else. But, this is nonetheless interesting. Rookie Anthony is getting much more power in his contact that Rookie Soto. Maybe this is because of age? Maybe Anthony is not swinging at pitches he can't get good contact on? Unfortauntely, bat tracking was not implemented in 2018, which means we can't look at their squared-up rates, but in 2025, Roman Anthony had a 26.7% squared-up rate (good for 60th percentile, if he was qualified) and Juan Soto clocked in at 32.5% (92nd percentile), despite Anthony having higher bat speed, solid contact% and barrel%. Note that the squared-up rate is looking at squared-up per swing, not per contact, which disadvantages Anthony due to his (statistically significantly!) higher whiff rate. 
+
+I added in exit velocity at the end as an exploratory analysis, so I do not have the same graphs for it as everything else. But, this is nonetheless interesting. Rookie Anthony is getting much more power in his contact that Rookie Soto. Maybe this is because of age? Maybe Anthony is not swinging at pitches he can't get good contact on? Unfortauntely, bat tracking was not implemented in 2018, which means we can't look at their squared-up rates, but in 2025, Roman Anthony had a 26.7% squared-up rate (good for 60th percentile, if he was qualified) and Juan Soto clocked in at 32.5% (92nd percentile), despite Anthony having higher bat speed, solid contact% and barrel%. Note that the squared-up rate is looking at squared-up per swing, not per contact, which disadvantages Anthony due to his (statistically significantly!) higher whiff rate. 
 
 ## DiD Effects
 These graphs begin to provide significance for the prior analysis. Note that if the line is entirely above or below the axis, the result is significant. This is because the 95% confidence interval (meaning, 95% of the time, the result will fall within the given range) is entirely positive or negative. If it is positive, Anthony is statistically significantly more likely to do the given action. If it is negative, Soto is. When the line crosses the axis, it means that there is a greater than 5% chance (generally agreed to be the barrier for significance) that both Anthony and Soto are more likely to swing or make contact. 
 ### Swinging
 In the heart of the zone, Anthony is significantly less likely to swing. 
+
 ![Swing DID Effect Zones](figures/02_zone_effects_swing_filteredSOLO.png) 
 For breaking balls, Anthony is more likely to swing, regardless of zone, and for fastballs, Soto is more likely in the heart and chase areas. There is an interesting pattern among pitch categories across zones (where fastball has the highest liklihood for Soto to swing, then offspeed, and breaking last. Future work could be to run an omnibus test to see if these patterns are significant. 
+
 ![Swing DID Effect Categories](figures/02_zone_effects_swing_filtered_categories.png)
 
 ### Contact 
 We have no significance regarding contact. We again see a similar pattern from above, though, where the average liklihood of contact for fastball and offspeed pitches is lower than breaking pitches. Note too that the 95% CI incrases in size with chase and shadow zone pitches because there is less data for contact in these regions. This makes sense--if players swing at pitches outside of the zone less, there will be be a smaller sample size than the pitches swung at inside of the zone (where you get a strike regardless of your swing).
+
 ![Contact DID Effect Zones](figures/02_zone_effects_contact_filteredSOLO.png)
 ![Contact DID Effect Categories](figures/02_zone_effects_contact_filtered_categories.png) 
 
@@ -110,11 +118,13 @@ I find it useful to look at the same data in different ways, which is why I incl
 ### Swinging
 ![alt text](figures/03_player_effects_swing_filteredSOLO.png) 
 > significance present in "heart" and "shadow"
+
 ![alt text](figures/03_player_effects_swing_filtered_categories.png) 
 > significance present in "fastball:heart", "fastball:shadow", "breaking:heart", "breaking:shadow", "breaking:chase"
 
 ### Contact
 There is no statistical significance in these graphs. This makes sense: look at the y-axis scale, in contrast to that of the swinging graphs. For contact, percentage differences to league average per zone lies between -6% and 2%, whereas in swinging liklihood, it ranges from ~0% to over -20%. 
+
 ![alt text](figures/03_player_effects_contact_filtered_categories.png) 
 ![alt text](figures/03_player_effects_contact_filteredSOLO.png) 
 
@@ -131,6 +141,7 @@ Just another way of presenting the same data.
 
 ## More Summary Tables for Exact Numbers (Calculated from Different Models)
 DiD mean: average difference betwen Soto and Anthony's differences from the league average
+
 DiD SE: standard error. "standard deviation of sampling distribution" (per wikipedia). When looking at significance, we can take a "sampling population" which is like testing a lot of slightly different populations to see how uniform our whole population is. The standard error measures how much the mean of each of these sampling populations differs from the mean of the whole population. This lets us calculate the confidence intervals.
 <table>
   <thead>
