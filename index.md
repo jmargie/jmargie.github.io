@@ -27,7 +27,7 @@
   text-decoration: underline;
 }
  main {
-  margin-left: 250px;
+  margin-left: 220px;
 }
 
 </style>
@@ -49,7 +49,6 @@
   </ul>
 </nav>
 
-<main>
 Julia Margie --- julialmargie@gmail.com --- jmargie@uchicago.edu
 
 To-Do: conclusions
@@ -411,6 +410,5 @@ This table looks at significance slightly differently. The filled in circle indi
     </tr>
   </tbody>
 </table>
-</main>
 
 
