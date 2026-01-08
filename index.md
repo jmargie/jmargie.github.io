@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -85,8 +84,8 @@
             background: #f4f4f4;
             padding: 2px 6px;
             border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
+            <!--font-family: 'Courier New', monospace;-->
+            font-size: 1em;
         }
         
         pre {
@@ -148,7 +147,6 @@
         
         summary {
             cursor: pointer;
-            font-weight: bold;
             color: #0056b3;
         }
         
