@@ -1,4 +1,6 @@
 Julia Margie --- julialmargie@gmail.com --- jmargie@uchicago.edu
+
+To-Do: conclusions
 # Roman Anthony vs Juan Soto
 ## Quotes / Motivation
 
