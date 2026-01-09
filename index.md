@@ -167,11 +167,17 @@
             text-align: left;
             border-radius: 6px;
             padding: 10px;
-            position: fixed;
+        
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 6px;
+        
             z-index: 1000;
             font-size: 0.85em;
             line-height: 1.4;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        
             opacity: 0;
             transition: opacity 0.2s;
         }
@@ -179,6 +185,10 @@
         .tooltip-term:hover .tooltip-text {
             visibility: visible;
             opacity: 1;
+        }
+        .side-menu .tooltip-term .tooltip-text {
+            left: 0;
+            max-width: 200px;
         }
         
         @media (max-width: 768px) {
@@ -226,9 +236,9 @@
 
         <p>"Anthony is averaging 4.25 pitches per plate appearance," Rosenthal wrote. "His walk rate is 14.6 percent. In those categories ... he would rank among the league leaders if he had enough playing time." (Keane, Colin. 2025. "Alex Cora Compares Red Sox Star To Juan Soto, With A Disclaimer." NESN.Com, August 21.)</p>
 
-        <p>"Players to rank in 95th percentile in hard-hit percentage and chase percentage in 2025, there's two of them. It's Juan Soto and Roman Anthony," Mark DeRosa shared on "MLB Central." (Crisafulli, Owen. 2025. "Roman Anthony Finds Himself In Exclusive Company Alongside Juan Soto." NESN.Com, August 12.)</p>
+        <p>"Players to rank in 95th percentile in hard-hit percentage and <span class="tooltip-term">chase%<span class="tooltip-text">The percentage of pitches that a batter swings at which are outside of the strike zone</span></span> in 2025, there's two of them. It's Juan Soto and Roman Anthony," Mark DeRosa shared on "MLB Central." (Crisafulli, Owen. 2025. "Roman Anthony Finds Himself In Exclusive Company Alongside Juan Soto." NESN.Com, August 12.)</p>
 
-        <p>It is easy to mislead people with statistics, especially when cherry-picked. I don't think the above people are attempting to mislead anyone, but comparing anyone to Juan Soto is a big deal! That changes a team! (Despite the 2025 Mets, unfortunately). Anthony is about my age, and despite the data not supporting it, I instinctually am fascinated by high walk rates in younger players (according to statcast, the relationship between age and BB% in 2025 has an r² of 0.01). Also, a recent ESPN article listed a lot of these statistics—highlighting the walk rate—as reasons the Red Sox should be optimistic about next year, and I am nothing if not a pessimist about the Yankees' chances in the AL East, but I'd like to be a realistic fan. If Anthony is actually a game-changing player like Soto, I'd like to regulate my expectations about the upcoming season.</p>
+        <p>It is easy to mislead people with statistics, especially when cherry-picked. I don't think the above people are attempting to mislead anyone, but comparing anyone to Juan Soto is a big deal! That changes a team! (Despite the 2025 Mets, unfortunately). Anthony is about my age, and despite the data not supporting it, I instinctually am fascinated by high walk rates in younger players (according to statcast, the relationship between age and <span class="tooltip-term">BB%<span class="tooltip-text"> number of walks / number of plate appearances. </span></span> in 2025 has an r² of 0.01). Also, a recent ESPN article listed a lot of these statistics—-highlighting the walk rate—-as reasons the Red Sox should be optimistic about next year. While I am nothing if not a pessimist about the Yankees' chances in the AL East, I'd still like to be a realistic fan. If Anthony is actually a game-changing player like Soto, I'd like to regulate my expectations about the upcoming season.</p>
 
         <p>So, let's take a look! Does Roman Anthony react to pitches like early Juan Soto?</p>
 
@@ -243,14 +253,14 @@
         
         <blockquote>Does Roman Anthony's plate approach in 2025, at the MLB level, mirror that of Juan Soto in 2018?</blockquote>
 
-        <p>To answer this question, I need to specify what a player's approach is. This is an exceptionally complicated question, so I narrowed once again, and considered their decision to swing, given a certain pitch location and <span class="tooltip-term">type<span class="tooltip-text">Pitch type classification (fastball, breaking ball, offspeed) based on velocity, movement, and spin characteristics.</span></span>, and the quality of contact or lack thereof. Unfortunately, we can't look at <span class="tooltip-term">squared-up rate<span class="tooltip-text">The percentage of swings where the exit velocity of the contact is at least 80% of what is possible, given the speed of the bat as it is swung and the speed of the pitch.</span></span> before 2023 because bat speed was not tracked, so I had to consider quality of contact differently. Recall, however, that we are interested in approach rather than results, specifically whether a given player has a "good at-bat" (Cora, quoted by Rosenthal). So, I examined <span class="tooltip-term">swing%<span class="tooltip-text">The percentage of pitches that a batter swings at</span></span> and contact%, and since DeRosa cited <span class="tooltip-term">HardHit%<span class="tooltip-text">The percentage of batted balls hit with an exit velocity of 95 mph or greater, indicating well-struck contact.</span></span>, I also looked at <span class="tooltip-term">exit velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span>. I considered isolating <span class="tooltip-term">chase%<span class="tooltip-text">The percentage of pitches outside the strike zone that a batter swings at, indicating plate discipline.</span></span>, but decided just considering swing% by zone would do the same thing. We now are trying to answer:</p>
+        <p>To answer this question, I need to specify what a player's approach is. This is an exceptionally complicated question, so I narrowed once again, and considered their decision to swing, given a certain pitch location and <span class="tooltip-term">type<span class="tooltip-text">Pitch type classification (fastball, breaking ball, offspeed) based on velocity, movement, and spin characteristics.</span></span>, and the quality of contact or lack thereof. Unfortunately, we can't look at <span class="tooltip-term">squared-up rate<span class="tooltip-text">The percentage of swings where the exit velocity of the contact is at least 80% of what is possible, given the speed of the bat as it is swung and the speed of the pitch.</span></span> before 2023 because bat speed was not tracked, so I had to consider quality of contact differently. Recall, however, that we are interested in approach rather than results, specifically whether a given player has a "good at-bat" (Cora, quoted by Rosenthal). So, I only examined <span class="tooltip-term">swing%<span class="tooltip-text">The percentage of pitches that a batter swings at</span></span> and <span class="tooltip-term">contact%<span class="tooltip-text">The percentage of pitches that a batter swings at and makes contact with (regardless of result)</span></span>, and since DeRosa cited <span class="tooltip-term">HardHit%<span class="tooltip-text">The percentage of batted balls hit with an exit velocity of 95 mph or greater, indicating well-struck contact.</span></span>, I also looked at <span class="tooltip-term">exit velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span>. I considered isolating <span class="tooltip-term">chase%<span class="tooltip-text">The percentage of pitches outside the strike zone that a batter swings at, indicating plate discipline.</span></span>, but decided just considering <span class="tooltip-term">swing%<span class="tooltip-text">The percentage of pitches that a batter swings at</span></span> by zone would do the same thing. We now are trying to answer:</p>
         
-        <blockquote>Does 2025 MLB Roman Anthony swing and make contact at the same rate as 2018 MLB Juan Soto after controlling for pitch location and type, and normalizing across seasons?</blockquote>
+        <blockquote>Does 2025 MLB Roman Anthony swing and make contact at the same rate as 2018 MLB Juan Soto after controlling for pitch location and <span class="tooltip-term">type<span class="tooltip-text">Pitch type classification (fastball, breaking ball, offspeed) based on velocity, movement, and spin characteristics.</span></span>, and normalizing across seasons?</blockquote>
 
-        <p>I am specifically interested in swing percentage because DeRosa mentioned chase percentage in his tweet and chase percentage is a subset of swing percentage. It is somewhat misleading to say that Anthony has a low chase percentage because he has a good eye for the zone without noting that he also has a low swing percentage in all parts of the zone.</p>
+        <p>I am specifically interested in <span class="tooltip-term">swing%<span class="tooltip-text">The percentage of pitches that a batter swings at</span></span> because DeRosa mentioned <span class="tooltip-term">chase%<span class="tooltip-text">The percentage of pitches that a batter swings at which are outside of the strike zone</span></span> in his tweet and <span class="tooltip-term">chase%<span class="tooltip-text">The percentage of pitches that a batter swings at which are outside of the strike zone</span></span> is a subset of <span class="tooltip-term">swing%<span class="tooltip-text">The percentage of pitches that a batter swings at</span></span>. It is somewhat misleading to say that Anthony has a low <span class="tooltip-term">chase%<span class="tooltip-text">The percentage of pitches that a batter swings at which are outside of the strike zone</span></span> because he has a good eye for the zone without noting that he also has a low <span class="tooltip-term">swing%<span class="tooltip-text">The percentage of pitches that a batter swings at</span></span> in all parts of the zone.</p>
 
         <h2 id="methods">Methods</h2>
-        <p>First, instead of running a power analysis (to make sure I had enough data, because Anthony only played a little over half the season), I found a stabilization analysis through FanGraphs which found that both swing% and whiff/contact percentages stabilized around 40PA. This meant I had enough data to begin. I downloaded all of the pitches from 2018 and 2025 from StatCast via pybaseball (baseballr was acting up).</p>
+        <p>First, instead of running a power analysis (to make sure I had enough data, because Anthony only played a little over half the season), I found a stabilization analysis through FanGraphs which found that both <span class="tooltip-term">swing%<span class="tooltip-text">The percentage of pitches that a batter swings at</span></span> and whiff/contact% stabilized around 40PA. This meant I had enough data to begin. I downloaded all of the pitches from 2018 and 2025 from StatCast via pybaseball (baseballr was acting up).</p>
 
         <p>I decided to do my analysis in R rather than Python (which I have more experience with) because I both wanted to get more practice with R and because it has a very straightforward library for Generalized Additive Models (GAMs) which essentially piece together a bunch of possibly non-linear relationships over a given space. This works better than linear and polynomial models, even when piecewise, because it is smooth and allows for different relationships over the surface, while ensuring the resulting model is still consistent. I also used the BAM model from the mgcv library in R because it is a modified GAM intended for larger datasets, and there are a lot of pitches thrown in the MLB over a season.</p>
 
@@ -260,7 +270,7 @@
             <p>If you have taken linear algebra, you can think of the model fitting as choosing all of our partial models from the same basis, i.e. a minimal generating set. For example, all of the formulas are some form of cubic equation, but they do not have to be the same one over the whole space. Then, we piece them together for a smooth result. The link above provides an example of a polynomial spline, which looks at each section of the data independently, then (intuitively, or, as my one of my math professors would say, morally) slides them up or down to 'match' the end points. The GAM is more complicated than this due to penalized regression (which I do not know how to do yet).</p>
         </details>
 
-        <p>I ran this model in a few ways: (1) recognizing the pitcher and game as an effect on each pitch, which could overfit the model, and (2) not considering each pitcher/game on the resulting decision, which could prioritize certain pitchers/games for the resulting predictions, based on sample size, as well as (3) considering the type of pitch (which again, could overfit the model and slowed down the processing significantly). The results were all approximately the same, but certain numbers may not align exactly because of this. I recognize that this is not best practice but since this is just a project for fun, I didn't worry too much. I differentiated these results with different colors in the graphs. I also decided against making a model specifically for whiffs, because contact predicated on swings is just the negative, and the heatmaps were more visually coherent.</p>
+        <p>I ran this model in a few ways: (1) recognizing the pitcher and game as an effect on each pitch, which could overfit the model, and (2) not considering each pitcher/game on the resulting decision, which could prioritize certain pitchers/games for the resulting predictions, based on sample size, as well as (3) considering the <span class="tooltip-term">type<span class="tooltip-text">Pitch type classification (fastball, breaking ball, offspeed) based on velocity, movement, and spin characteristics.</span></span> of pitch (which again, could overfit the model and slowed down the processing significantly). The results were all approximately the same, but certain numbers may not align exactly because of this. I recognize that this is not best practice but since this is just a project for fun, I didn't worry too much. I differentiated these results with different colors in the graphs. I also decided against making a model specifically for whiffs, because contact predicated on swings is just the negative, and the heatmaps were more visually coherent.</p>
 
         <p>For example, one of the swing models looked like this:</p>
         
@@ -313,10 +323,10 @@
 
         <img src="figures/06_heatmap_uncompared_contact_filtered_categories.png" alt="Contact Probability Heatmap">
 
-        <h3 id="exitvelo">Exit Velocity</h3>
+        <h3 id="exitvelo"><span class="tooltip-term">Exit Velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span></h3>
         <img src="figures/plot_06_heatmap_ev.png" alt="Exit Velocity DiD">
 
-        <p>I added in exit velocity at the end as an exploratory analysis, so I do not have the same graphs for it as everything else. But, this is nonetheless interesting. Rookie Anthony is getting much more power in his contact than Rookie Soto. Maybe this is because of age? Maybe Anthony is not swinging at pitches he can't get good contact on? Unfortunately, bat tracking was not implemented in 2018, which means we can't look at their squared-up rates, but in 2025, Roman Anthony had a 26.7% squared-up rate (good for 60th percentile, if he was qualified) and Juan Soto clocked in at 32.5% (92nd percentile), despite Anthony having higher bat speed, solid contact% and barrel%. Note that the squared-up rate is looking at squared-up per swing, not per contact, which disadvantages Anthony due to his (statistically significantly!) higher whiff rate.</p>
+        <p>I added in <span class="tooltip-term">exit velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span> at the end as an exploratory analysis, so I do not have the same graphs for it as everything else. But, this is nonetheless interesting. Rookie Anthony is getting much more power in his contact than Rookie Soto. Maybe this is because of age? Maybe Anthony is not swinging at pitches he can't get good contact on? Unfortunately, bat tracking was not implemented in 2018, which means we can't look at their squared-up rates, but in 2025, Roman Anthony had a 26.7% squared-up rate (good for 60th percentile, if he was qualified) and Juan Soto clocked in at 32.5% (92nd percentile), despite Anthony having higher bat speed, solid <span class="tooltip-term">contact%<span class="tooltip-text">The percentage of pitches that a batter swings at and makes contact with (regardless of result)</span></span> and barrel%. Note that the squared-up rate is looking at squared-up per swing, not per contact, which disadvantages Anthony due to his (statistically significantly!) higher whiff rate.</p>
 
         <h2 id="dideffects">DiD Effects</h2>
         <p>These graphs begin to provide significance for the prior analysis. Note that if the line is entirely above or below the axis, the result is significant. This is because the 95% confidence interval (meaning, 95% of the time, the result will fall within the given range) is entirely positive or negative. If it is positive, Anthony is statistically significantly more likely to do the given action. If it is negative, Soto is. When the line crosses the axis, it means that there is a greater than 5% chance (generally agreed to be the barrier for significance) that both Anthony and Soto are more likely to swing or make contact.</p>
@@ -370,7 +380,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>pitch category</th>
+                    <th>pitch <span class="tooltip-term">category<span class="tooltip-text">Pitch category classification (fastball, breaking ball, offspeed) based on velocity, movement, and spin characteristics.</span></span></th>
                     <th>zone</th>
                     <th>DiD mean</th>
                     <th>DiD SE</th>
@@ -521,14 +531,14 @@
                 </tr>
                 <tr>
                     <td>Heart</td>
-                    <td>Exit Velocity</td>
+                    <td><span class="tooltip-term">exit velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span></td>
                     <td><b style="color:black;">-0.709 ●</b></td>
                     <td>[-0.796, -0.622]</td>
                     <td>0.0%</td>
                 </tr>
                 <tr>
                     <td>Shadow</td>
-                    <td>Exit Velocity</td>
+                    <td><span class="tooltip-term">exit velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span></td>
                     <td><b style="color:black;">0.420 ●</b></td>
                     <td>[0.336, 0.504]</td>
                     <td>0.0%</td>
