@@ -52,23 +52,24 @@
         
         main {
             margin-left: 150px;
+            color: #000000;
         }
         
         h1 {
-            color: #2c3e50;
+            color: #000000;
             border-bottom: 3px solid #333;
             padding-bottom: 10px;
         }
         
         h2 {
-            color: #34495e;
+            color: #000000;
             margin-top: 30px;
             border-bottom: 2px solid #bdc3c7;
             padding-bottom: 8px;
         }
         
         h3 {
-            color: #555;
+            color: #000000;
             margin-top: 20px;
         }
         
