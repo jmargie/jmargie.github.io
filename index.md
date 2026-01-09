@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -84,7 +85,6 @@
             background: #f4f4f4;
             padding: 2px 6px;
             border-radius: 3px;
-            <!--font-family: 'Courier New', monospace;-->
             font-size: 1em;
         }
         
@@ -106,8 +106,6 @@
             height: auto;
             display: block;
             margin: 20px 0;
-            <!--border: 1px solid #ddd;
-            border-radius: 4px;-->
         }
         
         table {
@@ -147,13 +145,40 @@
         
         summary {
             cursor: pointer;
-            <!--color: #0056b3;-->
         }
         
         .contact-info {
             font-size: 0.9em;
             color: #666;
             margin-bottom: 20px;
+        }
+        
+        .tooltip-term {
+            border-bottom: 2px dotted #dc3545;
+            cursor: help;
+            position: relative;
+        }
+        
+        .tooltip-term .tooltip-text {
+            visibility: hidden;
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 10px;
+            position: fixed;
+            z-index: 1000;
+            font-size: 0.85em;
+            line-height: 1.4;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .tooltip-term:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
         }
         
         @media (max-width: 768px) {
@@ -205,22 +230,24 @@
 
         <p>It is easy to mislead people with statistics, especially when cherry-picked. I don't think the above people are attempting to mislead anyone, but comparing anyone to Juan Soto is a big deal! That changes a team! (Despite the 2025 Mets, unfortunately). Anthony is about my age, and despite the data not supporting it, I instinctually am fascinated by high walk rates in younger players (according to statcast, the relationship between age and BB% in 2025 has an r² of 0.01). Also, a recent ESPN article listed a lot of these statistics—highlighting the walk rate—as reasons the Red Sox should be optimistic about next year, and I am nothing if not a pessimist about the Yankees' chances in the AL East, but I'd like to be a realistic fan. If Anthony is actually a game-changing player like Soto, I'd like to regulate my expectations about the upcoming season.</p>
 
-        <p>So, let's take a look! Do those two statistics actually represent their style during a plate appearance? Is Roman Anthony the next Juan Soto?</p>
+        <p>So, let's take a look! Does Roman Anthony react to pitches like early Juan Soto?</p>
+
+        <p>Please note that I am hoping for this analysis to be accessible with minimal baseball knowledge, though I do assume a level of knowledge that includes things like walks, strikes, at-bats, and contact. Words underlined will show a definition when hovered over, and I'll try to do that for more obscure statistics. If you think something else should be defined or that I did something wrong elsewhere, feel free to email me! I always want to improve both my analysis and communication.</p>
 
         <h2 id="planning">Planning</h2>
-        <p>Before starting any analysis, it is important to make sure you actually know how to answer the question you are asking. For me, that is:</p>
+        <p>Before starting any analysis, I like to make sure I know exactly what question I am asking. Here, that is:</p>
         
         <blockquote>Does Roman Anthony's plate approach at the MLB level mirror that of Juan Soto?</blockquote>
 
-        <p>In order to answer this, I had to choose whether or not I wanted to compare 2025 Soto to 2025 Anthony (which would make direct numeric comparisons easier) or comparing rookie Soto to rookie Anthony, i.e. 2018 Soto to 2025 Anthony. I decided to look at their rookie seasons, because I want the end goal of this analysis to be how Anthony might grow as a player, not just how they currently line up. Also, Cora specifically compares him to "early" Juan Soto. So, the question became:</p>
+        <p>In order to answer this, I had to choose whether or not I wanted to compare 2025 Soto to 2025 Anthony (which would make direct numeric comparisons easier) or rookie Soto to rookie Anthony, i.e. 2018 Soto to 2025 Anthony. I decided to look at their rookie seasons, because I want the end goal of this analysis to be how Anthony might grow as a player, not just how they currently line up. Also, Cora specifically compares him to "early" Juan Soto. So, the question became:</p>
         
         <blockquote>Does Roman Anthony's plate approach in 2025, at the MLB level, mirror that of Juan Soto in 2018?</blockquote>
 
-        <p>To answer this question, we have to specify what a player's approach is. This is an exceptionally complicated question, so I narrowed once again, and considered their decision to swing, given a certain pitch location and type, and the quality of contact or lack thereof. Unfortunately, we can't look at squared-up rate before 2023 because bat speed was not tracked, so I had to consider quality of contact differently. Recall, however, that we are interested in approach rather than results, specifically whether a given player has a "good at-bat" (Cora, quoted by Rosenthal). So, we examine swing%, chase%, whiff%, and contact%, and since DeRosa cited HardHit%, we will also look at exit velocity. We now are trying to answer:</p>
+        <p>To answer this question, I need to specify what a player's approach is. This is an exceptionally complicated question, so I narrowed once again, and considered their decision to swing, given a certain pitch location and <span class="tooltip-term">type<span class="tooltip-text">Pitch type classification (fastball, breaking ball, offspeed) based on velocity, movement, and spin characteristics.</span></span>, and the quality of contact or lack thereof. Unfortunately, we can't look at <span class="tooltip-term">squared-up rate<span class="tooltip-text">The percentage of swings where the exit velocity of the contact is at least 80% of what is possible, given the speed of the bat as it is swung and the speed of the pitch.</span></span> before 2023 because bat speed was not tracked, so I had to consider quality of contact differently. Recall, however, that we are interested in approach rather than results, specifically whether a given player has a "good at-bat" (Cora, quoted by Rosenthal). So, I examined <span class="tooltip-term">swing%<span class="tooltip-text">The percentage of pitches that a batter swings at</span></span> and contact%, and since DeRosa cited <span class="tooltip-term">HardHit%<span class="tooltip-text">The percentage of batted balls hit with an exit velocity of 95 mph or greater, indicating well-struck contact.</span></span>, I also looked at <span class="tooltip-term">exit velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span>. I considered isolating <span class="tooltip-term">chase%<span class="tooltip-text">The percentage of pitches outside the strike zone that a batter swings at, indicating plate discipline.</span></span>, but decided just considering swing% by zone would do the same thing. We now are trying to answer:</p>
         
-        <blockquote>Does 2025 MLB Roman Anthony swing, chase, whiff, and make contact at the same rate as 2018 MLB Juan Soto after controlling for pitch location and type, and normalizing across seasons?</blockquote>
+        <blockquote>Does 2025 MLB Roman Anthony swing and make contact at the same rate as 2018 MLB Juan Soto after controlling for pitch location and type, and normalizing across seasons?</blockquote>
 
-        <p>I am specifically interested in swing percentage because DeRosa mentioned chase percentage in his tweet, but chase percentage is a subset of swing percentage. It is somewhat misleading to say that Anthony has a low chase percentage because he has a good eye for the zone without noting that he also has a low swing percentage.</p>
+        <p>I am specifically interested in swing percentage because DeRosa mentioned chase percentage in his tweet and chase percentage is a subset of swing percentage. It is somewhat misleading to say that Anthony has a low chase percentage because he has a good eye for the zone without noting that he also has a low swing percentage in all parts of the zone.</p>
 
         <h2 id="methods">Methods</h2>
         <p>First, instead of running a power analysis (to make sure I had enough data, because Anthony only played a little over half the season), I found a stabilization analysis through FanGraphs which found that both swing% and whiff/contact percentages stabilized around 40PA. This meant I had enough data to begin. I downloaded all of the pitches from 2018 and 2025 from StatCast via pybaseball (baseballr was acting up).</p>
