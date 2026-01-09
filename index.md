@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -151,6 +150,7 @@
             font-size: 0.9em;
             color: #666;
             margin-bottom: 20px;
+            text-align:center;
         }
         
         .tooltip-term {
@@ -216,30 +216,35 @@
                 <a href="#results">Results</a>
                 <ul class="submenu">
                     <li><a href="#heatmaps">Heatmaps</a></li>
-                    <li><a href="#did">DiD Effects</a></li>
-                    <li><a href="#summary-tables">Summary Tables</a></li>
+                    <li><a href="#dideffects">DiD Effects</a></li>
+                </ul>
+            </li>
+            <li><a href="#conclusions">Conclusions</a></li>
+            <li><a href="#appendix">Appendix</a>
+                <ul class="submenu">
+                    <li><a href="#sumtable">Summary Tables</a></li>
+                    <li><a href="#bargraph">Bar Graph Comparisons</a></li>
+                    <li><a href="#moresum">Even More Summary Tables</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
 
     <main>
-        <p class="contact-info">Julia Margie — julialmargie@gmail.com — jmargie@uchicago.edu</p>
-        
-        <p><em>To-Do: conclusions</em></p>
+        <p class="contact-info"><a href="mailto:julialmargie@gmail.com">julialmargie@gmail.com</a> - Julia Margie — <a href="mailto:jmargie@uchicago.edu">jmargie@uchicago.edu</a></p>
 
-        <h1 id="header">Roman Anthony vs Juan Soto</h1>
+        <h1 id="header">Is Roman Anthony the next Juan Soto?</h1>
         
         <h2 id="motivation">Motivation</h2>
         <p>Over the summer, Roman Anthony debuted for the Red Sox, and was immediately impactful, which resulted in lots of buzz. Some of the responses to his play stuck with me for a while because I wasn't sure if I believed the conclusions these articles came to from just a few statistics.</p>
 
-        <p>"Who he reminds me of, it's hard," Alex Cora said "I don't want to say (Barry) Bonds, of course. Probably (Juan) Soto, without the flashiness, early on. It's a good at-bat. He's not going to chase. Even when he doesn't get hits, you're like, holy s---, that's a good at-bat" (Rosenthal, Ken. 2025. "Red Sox Rookie Roman Anthony Has Passed Every Major-League Test so Far. Now He Takes on Yankee Stadium." The New York Times, August 21.)</p>
+        <p>"Who he reminds me of, it's hard," Alex Cora said "I don't want to say (Barry) Bonds, of course. Probably (Juan) Soto, without the flashiness, early on. It's a good at-bat. He's not going to chase. Even when he doesn't get hits, you're like, holy s---, that's a good at-bat"<sup><span class="tooltip-term">1<span class="tooltip-text">Rosenthal, Ken. 2025. "Red Sox Rookie Roman Anthony Has Passed Every Major-League Test so Far. Now He Takes on Yankee Stadium." The New York Times, August 21.<\span><\span><\sup> </p>
 
-        <p>"Anthony is averaging 4.25 pitches per plate appearance," Rosenthal wrote. "His walk rate is 14.6 percent. In those categories ... he would rank among the league leaders if he had enough playing time." (Keane, Colin. 2025. "Alex Cora Compares Red Sox Star To Juan Soto, With A Disclaimer." NESN.Com, August 21.)</p>
+        <p>"Anthony is averaging 4.25 pitches per plate appearance," Rosenthal wrote. "His walk rate is 14.6 percent. In those categories ... he would rank among the league leaders if he had enough playing time."<sup><span class="tooltip-term">2<span class="tooltip-text">Keane, Colin. 2025. "Alex Cora Compares Red Sox Star To Juan Soto, With A Disclaimer." NESN.Com, August 21.<\span><\span><\sup></p>
 
-        <p>"Players to rank in 95th percentile in hard-hit percentage and <span class="tooltip-term">chase%<span class="tooltip-text">The percentage of pitches that a batter swings at which are outside of the strike zone</span></span> in 2025, there's two of them. It's Juan Soto and Roman Anthony," Mark DeRosa shared on "MLB Central." (Crisafulli, Owen. 2025. "Roman Anthony Finds Himself In Exclusive Company Alongside Juan Soto." NESN.Com, August 12.)</p>
+        <p>"'Players to rank in 95th percentile in hard-hit percentage and <span class="tooltip-term">chase%<span class="tooltip-text">The percentage of pitches that a batter swings at which are outside of the strike zone</span></span> in 2025, there's two of them. It's Juan Soto and Roman Anthony,' Mark DeRosa shared on "MLB Central." <sup><span class="tooltip-term">3<span class="tooltip-text">Crisafulli, Owen. 2025. "Roman Anthony Finds Himself In Exclusive Company Alongside Juan Soto." NESN.Com, August 12.<\span><\span><\sup></p>
 
-        <p>It is easy to mislead people with statistics, especially when cherry-picked. I don't think the above people are attempting to mislead anyone, but comparing anyone to Juan Soto is a big deal! That changes a team! (Despite the 2025 Mets, unfortunately). Anthony is about my age, and despite the data not supporting it, I instinctually am fascinated by high walk rates in younger players (according to statcast, the relationship between age and <span class="tooltip-term">BB%<span class="tooltip-text"> number of walks / number of plate appearances. </span></span> in 2025 has an r² of 0.01). Also, a recent ESPN article listed a lot of these statistics—-highlighting the walk rate—-as reasons the Red Sox should be optimistic about next year. While I am nothing if not a pessimist about the Yankees' chances in the AL East, I'd still like to be a realistic fan. If Anthony is actually a game-changing player like Soto, I'd like to regulate my expectations about the upcoming season.</p>
+        <p>It is easy to mislead people with statistics, especially when cherry-picked. I don't think the above people are attempting to mislead anyone, but comparing anyone to Juan Soto is a big deal! That changes a team! (Despite the 2025 Mets, unfortunately). Anthony is about my age, and despite the data not supporting it, I instinctually am fascinated by high walk rates in younger players (according to statcast, the relationship between age and <span class="tooltip-term">BB%<span class="tooltip-text"> number of walks / number of plate appearances. </span></span> in 2025 has an r² of 0.01). Also, a recent ESPN<sup><span class="tooltip-term">4<span class="tooltip-text">ESPN.Com. 2025. “The Number That Will Decide 2026 for All 15 American League Teams.” December 29. https://www.espn.com/mlb/story/_/id/47336183/mlb-2026-predictions-american-league-yankees-red-sox-blue-jays-tigers-mariners.<\span><\span><\sup> article listed a lot of these statistics—-highlighting the walk rate—-as reasons the Red Sox should be optimistic about next year. While I am nothing if not a pessimist about the Yankees' chances in the AL East, I'd still like to be a realistic fan. If Anthony is actually a game-changing player like Soto, I'd like to regulate my expectations about the upcoming season.</p>
 
         <p>So, let's take a look! Does Roman Anthony react to pitches like early Juan Soto?</p>
 
@@ -307,11 +312,11 @@
 
         <p>The next step was creating prediction tables to granularize the data, then doing differences-in-differences analyses to normalize Roman Anthony to 2025 hitters and Juan Soto to 2018 hitters, and compare the difference between these results.</p>
 
-        <h1 id="results">Results</h1>
+<h1 id="results">Results</h1>
         
-        <h2 id="heatmaps">Heatmaps</h2>
+<h2 id="heatmaps">Heatmaps</h2>
         
-        <h3 id="heatmapswing">Swinging</h3>
+<h3 id="heatmapswing">Swinging</h3>
         <p>The heatmaps show that Soto swung more than Anthony — this is not necessarily significant. This is particularly true in the <span class="tooltip-term">shadow<span class="tooltip-text">one baseball-length inside and outside of the strike zone. Strike/ball call more dependant on the catcher than other pitches.</span></span> of the top of the strike zone. These graphs also act as a sanity check for my models, and pass the eye-test (though, like in baseball, the eye-test does not necessarily align with the advanced numbers in statistics! In this case, though, it seems to).</p>
 
         <img src="figures/plot_04_heatmap_swing.png" alt="Swing Probability DiD">
@@ -321,7 +326,7 @@
         <img src="figures/06_heatmap_uncompared_swing_filtered_categories.png" alt="Swing Probability Heatmap">
         <p><em>Note: these two graphs were developed by slightly different models</em></p>
 
-        <h3 id="heatmapcontact">Contact</h3>
+<h3 id="heatmapcontact">Contact</h3>
         <p>Soto also made contact at a higher rate than Anthony in the bottom of the zone. This is interesting to me because Anthony swung more in this part of the zone. This seems to imply that Soto is reading pitches in the bottom of the zone better than Anthony. I did not run significance testing for top/bottom of zone, but that would be an interesting next step. It seems likely that Soto's nearly 20% higher chance at making contact around the lower edge of the zone would be significant. If I had to give Anthony advice on where to focus (if he wants to be more like Soto), I would tell him to practice making contact with pitches around his knees, even just to foul them off! Given that Soto swings less but makes more contact, it is likely that he is reading the pitches better than Anthony. Another place for further research would be the differences likelihood to hit a ball into play, given contact, and <span class="tooltip-term">xwOBA<span class="tooltip-text">predictive statistic looking at liklihood of a batted ball event to result in the batter being safely on base, weighted by how likely the batter is to make it to a specific base. compare with SLG, wOBA, and OBP, which attempt to measure similar things.</span></span> of these contact events. Maybe Anthony's contact is more useful!</p>
 
         <img src="figures/plot_05_heatmap_contact.png" alt="Contact Probability DiD">
@@ -330,7 +335,7 @@
 
         <img src="figures/06_heatmap_uncompared_contact_filtered_categories.png" alt="Contact Probability Heatmap">
 
-        <h3 id="exitvelo"><span class="tooltip-term">Exit Velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span></h3>
+<h3 id="exitvelo"><span class="tooltip-term">Exit Velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span></h3>
         <img src="figures/plot_06_heatmap_ev.png" alt="Exit Velocity DiD">
 
         <p>I added in <span class="tooltip-term">exit velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span> at the end as an exploratory analysis, so I do not have the same analysis for it as everything else, so I am not sure of statistical significance. It is nonetheless interesting! Rookie Anthony is getting much more power in his contact than Rookie Soto. Maybe this is because of age? Maybe Anthony is not swinging at pitches he can't get good contact on? Unfortunately, bat tracking was not implemented in 2018, which means we can't look at their <span class="tooltip-term">squared-up rates<span class="tooltip-text">The percentage of swings where the exit velocity of the contact is at least 80% of what is possible, given the speed of the bat as it is swung and the speed of the pitch.</span></span>, but in 2025, Roman Anthony had a 26.7% <span class="tooltip-term">squared-up rate<span class="tooltip-text">The percentage of swings where the exit velocity of the contact is at least 80% of what is possible, given the speed of the bat as it is swung and the speed of the pitch.</span></span> (good for 60th percentile, if he was qualified) and Juan Soto clocked in at 32.5% (92nd percentile), despite Anthony having higher bat speed, <span class="tooltip-term">solid contact%<span class="tooltip-text">The percentage of pitches that a batter contacts at just under the requirements for a barrel. see <a href="https://pitcherlist.com/beyond-the-barrel-an-introduction-to-ideal-contact-rate/">here</a> for a more in depth explanation</span></span> and <span class="tooltip-term">barrel%<span class="tooltip-text">percentage of contacted pitches hit particularly well. see <a href="https://pitcherlist.com/beyond-the-barrel-an-introduction-to-ideal-contact-rate/">here</a> for a more in depth explanation</span></span>. Note that the squared-up rate is looking at squared-up per swing, not per contact, which disadvantages Anthony due to his (statistically significantly!) higher whiff rate.</p>
@@ -353,6 +358,22 @@
         <img src="figures/02_zone_effects_contact_filteredSOLO.png" alt="Contact DID Effect Zones">
         <img src="figures/02_zone_effects_contact_filtered_categories.png" alt="Contact DID Effect Categories">
 
+<h1 id="conclusions">Conclusions</h1>
+to be completed tomorrow morning.
+<h1 id="appendix">Appendix</h1>
+<h2 id="sumtable">Summary Tables</h2>
+        <p>Just another way of presenting the same data.</p>
+
+<h3 id="sumswing">Swinging</h3>
+        <img src="figures/04_summary_table_swing_filteredSOLO.png" alt="Summary Table Swing Solo">
+        <p></p>
+        <img src="figures/04_summary_table_swing_filtered_categories.png" alt="Summary Table Swing Categories">
+
+<h3 id="sumcontact">Contact</h3>
+        <img src="figures/04_summary_table_contact_filteredSOLO.png" alt="Summary Table Contact Solo">
+        <p></p>
+        <img src="figures/04_summary_table_contact_filtered_categories.png" alt="Summary Table Contact Categories">
+
         <h2 id="bargraph">Bar Graph Comparisons</h2>
         <p>I find it useful to look at the same data in different ways, which is why I included these graphs too. You can see where the differences shown in the prior graphs come from (i.e. Soto is slightly more likely than league average in 2018 to swing at a fastball in the heart of the zone, but Anthony is much less likely). These graphs should be understood in the context of the prior graphs and later tables since they do not mark significance. Below each graph, I note which parts are statistically significant.</p>
 
@@ -369,18 +390,7 @@
         <img src="figures/03_player_effects_contact_filtered_categories.png" alt="Player Effects Contact Categories">
         <img src="figures/03_player_effects_contact_filteredSOLO.png" alt="Player Effects Contact Solo">
 
-        <h2 id="summary-tables">Summary Tables</h2>
-        <p>Just another way of presenting the same data.</p>
-
-        <h3 id="sumswing">Swinging</h3>
-        <img src="figures/04_summary_table_swing_filteredSOLO.png" alt="Summary Table Swing Solo">
-        <img src="figures/04_summary_table_swing_filtered_categories.png" alt="Summary Table Swing Categories">
-
-        <h3 id="sumcontact">Contact</h3>
-        <img src="figures/04_summary_table_contact_filtered_categories.png" alt="Summary Table Contact Categories">
-        <img src="figures/04_summary_table_contact_filteredSOLO.png" alt="Summary Table Contact Solo">
-
-        <h2 id="moresum">More Summary Tables for Exact Numbers (Calculated from Different Models)</h2>
+<h2 id="moresum">More Summary Tables for Exact Numbers (Calculated from Different Models)</h2>
         <p><strong>DiD mean:</strong> average difference between Soto and Anthony's differences from the league average</p>
         <p><strong>DiD SE:</strong> standard error. "standard deviation of sampling distribution" (per wikipedia). When looking at significance, we can take a "sampling population" which is like testing a lot of slightly different populations to see how uniform our whole population is. The standard error measures how much the mean of each of these sampling populations differs from the mean of the whole population. This lets us calculate the confidence intervals.</p>
 
