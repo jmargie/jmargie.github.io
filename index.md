@@ -364,7 +364,12 @@
         <img src="figures/02_zone_effects_contact_filtered_categories.png" alt="Contact DID Effect Categories">
 
 <h1 id="conclusions">Conclusions</h1>
-to be completed tomorrow morning.
+Let's go back to my original question: is Roman Anthony the next Juan Soto? I clarified this to: 
+<blockquote>Does 2025 MLB Roman Anthony swing and make contact at the same rate as 2018 MLB Juan Soto after controlling for pitch location and type and normalizing across seasons?</blockquote> 
+Anthony does not swing at the same rate, particularly when seeing breaking balls and fastballs. He also hits harder than Soto did in 2018 (who has increased his average exit velocity a little, over his career). Contact predicated on a swing has no significance, which implies it is similar for the two players, but I did not specifically look at top vs bottom of the zone, which the heatmaps imply might be significant. In the next couple weeks, if I have time, I will add that!
+
+To conclude more generally, Anthony is not the same kind of player as Soto, compared to the average league behavior in their rookie years. However, if he wants to become more like Soto (which he may be well-suited for, given his patience regarding swinging), I would recommend he focus on breaking balls and pitches around his knees. More specifically, becoming more comfortable swinging at pitches in the shadow zone in order to foul them off, instead of just taking the strike looking. However, I do not know how this will be affected by the ABS system coming into the MLB in the 2026 season. Perhaps all of my predictions will be for naught. Either way, I am excited to recompare Soto and Anthony after next season, with more data!
+
 <h1 id="appendix">Appendix</h1>
 <h2 id="sumtable">Summary Tables</h2>
         <p>Just another way of presenting the same data.</p>
@@ -518,54 +523,80 @@ to be completed tomorrow morning.
 
         <p>This table looks at significance slightly differently. The filled in circle indicates significance. The significant area indicates if the region of the surface which makes the estimate significant is large, or if the fewer significant points are just, exceptionally significant. It's another way of thinking about this type of analysis, and I'm not sure if I am as confident in the results.</p>
 
-        <table>
-            <caption>Difference-in-Differences Results by Zone and Metric</caption>
-            <thead>
-                <tr>
-                    <th>Zone</th>
-                    <th>Metric</th>
-                    <th>DiD Estimate</th>
-                    <th>95% CI</th>
-                    <th>% Significant Area</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Heart</td>
-                    <td>Contact Probability</td>
-                    <td><b style="color:black;">-0.019 ●</b></td>
-                    <td>[-0.023, -0.016]</td>
-                    <td>25.3%</td>
-                </tr>
-                <tr>
-                    <td>Shadow</td>
-                    <td>Contact Probability</td>
-                    <td><b style="color:black;">-0.026 ●</b></td>
-                    <td>[-0.034, -0.017]</td>
-                    <td>53.2%</td>
-                </tr>
-                <tr>
-                    <td>Waste</td>
-                    <td>Contact Probability</td>
-                    <td><b style="color:black;">0.033 ●</b></td>
-                    <td>[0.029, 0.037]</td>
-                    <td>23.7%</td>
-                </tr>
-                <tr>
-                    <td>Heart</td>
-                    <td><span class="tooltip-term">exit velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span></td>
-                    <td><b style="color:black;">-0.709 ●</b></td>
-                    <td>[-0.796, -0.622]</td>
-                    <td>0.0%</td>
-                </tr>
-                <tr>
-                    <td>Shadow</td>
-                    <td><span class="tooltip-term">exit velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span></td>
-                    <td><b style="color:black;">0.420 ●</b></td>
-                    <td>[0.336, 0.504]</td>
-                    <td>0.0%</td>
-                </tr>
-                <tr>
-                    <td>Waste</td>
-                    <td>Exit Velocity</td>
-                    <td>
+ <table>
+<caption>Difference-in-Differences Results by Zone and Metric</caption>
+<thead>
+<tr>
+ <th>Zone</th>
+ <th>Metric</th>
+ <th>DiD Estimate</th>
+ <th>95% CI</th>
+ <th>% Significant Area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td>Heart</td>
+ <td>Contact Probability</td>
+ <td><b style="color:black;">-0.019 ●</b></td>
+ <td>[-0.023, -0.016]</td>
+ <td>25.3%</td>
+</tr>
+<tr>
+ <td>Shadow</td>
+ <td>Contact Probability</td>
+ <td><b style="color:black;">-0.026 ●</b></td>
+ <td>[-0.034, -0.017]</td>
+ <td>53.2%</td>
+</tr>
+<tr>
+ <td>Waste</td>
+ <td>Contact Probability</td>
+ <td><b style="color:black;">0.033 ●</b></td>
+ <td>[0.029, 0.037]</td>
+ <td>23.7%</td>
+</tr>
+<tr>
+ <td>Heart</td>
+ <td>Exit Velocity</td>
+ <td><b style="color:black;">-0.709 ●</b></td>
+ <td>[-0.796, -0.622]</td>
+ <td>0.0%</td>
+</tr>
+<tr>
+ <td>Shadow</td>
+ <td>Exit Velocity</td>
+ <td><b style="color:black;">0.420 ●</b></td>
+ <td>[0.336, 0.504]</td>
+ <td>0.0%</td>
+</tr>
+<tr>
+ <td>Waste</td>
+ <td>Exit Velocity</td>
+ <td><b style="color:black;">4.124 ●</b></td>
+ <td>[4.029, 4.219]</td>
+ <td>0.0%</td>
+</tr>
+<tr>
+ <td>Heart</td>
+ <td>Swing Probability</td>
+ <td><b style="color:black;">-0.074 ●</b></td>
+ <td>[-0.075, -0.073]</td>
+ <td>93.8%</td>
+</tr>
+<tr>
+ <td>Shadow</td>
+ <td>Swing Probability</td>
+ <td><b style="color:black;">-0.045 ●</b></td>
+ <td>[-0.047, -0.043]</td>
+ <td>22.8%</td>
+</tr>
+<tr>
+ <td>Waste</td>
+ <td>Swing Probability</td>
+ <td><b style="color:black;">0.009 ●</b></td>
+ <td>[0.009, 0.010]</td>
+ <td>8.1%</td>
+</tr>
+</tbody>
+</table>
