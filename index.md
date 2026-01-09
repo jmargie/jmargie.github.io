@@ -154,7 +154,7 @@
         }
         
         .tooltip-term {
-    border-bottom: 2px dotted #dc3545;
+    border-bottom: 2px dotted #42cbf5;
     cursor: help;
     position: relative;
 }
