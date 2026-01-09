@@ -314,7 +314,7 @@
     discrete = TRUE
 )</code></pre>
 
-        <p>The next step was creating prediction tables to granularize the data, then doing differences-in-differences analyses to normalize Roman Anthony to 2025 hitters and Juan Soto to 2018 hitters, and compare the difference between these results.</p>
+        <p>The next step was creating prediction tables to granularize the data, normalizing Roman Anthony to 2025 hitters and Juan Soto to 2018 hitters, and comparing the difference between these results (often referred to as differences-in-differences analysis, or DiD).</p>
 
 <h1 id="results">Results</h1>
         
