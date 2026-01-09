@@ -154,39 +154,42 @@
         }
         
         .tooltip-term {
-            border-bottom: 2px dotted #dc3545;
-            cursor: help;
-            position: relative;
-        }
-        
-        .tooltip-term .tooltip-text {
-            visibility: hidden;
-            width: 250px;
-            background-color: #333;
-            color: #fff;
-            text-align: left;
-            border-radius: 6px;
-            padding: 10px;
-        
-            position: absolute;
-            top: 100%;
-            left: 0;
-            margin-top: 6px;
-        
-            z-index: 1000;
-            font-size: 0.85em;
-            font-style: normal;
-            line-height: 1.4;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-        
-        .tooltip-term:hover .tooltip-text {
-            visibility: visible;
-            opacity: 1;
-        }
+    border-bottom: 2px dotted #dc3545;
+    cursor: help;
+    position: relative;
+}
+
+.tooltip-term .tooltip-text {
+    visibility: hidden;
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 6px;
+
+    z-index: 1000;
+    font-size: 0.85em;
+    font-style: normal;
+    line-height: 1.4;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+/* keep visible when hovering term OR tooltip */
+.tooltip-term:hover .tooltip-text,
+.tooltip-term .tooltip-text:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
         .side-menu .tooltip-term .tooltip-text {
             left: 0;
             max-width: 200px;
@@ -338,7 +341,7 @@
 <h3 id="exitvelo"><span class="tooltip-term">Exit Velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span></h3>
         <img src="figures/plot_06_heatmap_ev.png" alt="Exit Velocity DiD">
 
-        <p>I added in <span class="tooltip-term">exit velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span> at the end as an exploratory analysis, so I do not have the same analysis for it as everything else, so I am not sure of statistical significance. It is nonetheless interesting! Rookie Anthony is getting much more power in his contact than Rookie Soto. Maybe this is because of age? Maybe Anthony is not swinging at pitches he can't get good contact on? Unfortunately, bat tracking was not implemented in 2018, which means we can't look at their <span class="tooltip-term">squared-up rates<span class="tooltip-text">The percentage of swings where the exit velocity of the contact is at least 80% of what is possible, given the speed of the bat as it is swung and the speed of the pitch.</span></span>, but in 2025, Roman Anthony had a 26.7% <span class="tooltip-term">squared-up rate<span class="tooltip-text">The percentage of swings where the exit velocity of the contact is at least 80% of what is possible, given the speed of the bat as it is swung and the speed of the pitch.</span></span> (good for 60th percentile, if he was qualified) and Juan Soto clocked in at 32.5% (92nd percentile), despite Anthony having higher bat speed, <span class="tooltip-term">solid contact%<span class="tooltip-text">The percentage of pitches that a batter contacts at just under the requirements for a barrel. see <a href="https://pitcherlist.com/beyond-the-barrel-an-introduction-to-ideal-contact-rate/">here</a> for a more in depth explanation</span></span> and <span class="tooltip-term">barrel%<span class="tooltip-text">percentage of contacted pitches hit particularly well. see <a href="https://pitcherlist.com/beyond-the-barrel-an-introduction-to-ideal-contact-rate/">here</a> for a more in depth explanation</span></span>. Note that the squared-up rate is looking at squared-up per swing, not per contact, which disadvantages Anthony due to his (statistically significantly!) higher whiff rate.</p>
+        <p>I added in <span class="tooltip-term">exit velocity<span class="tooltip-text">The speed of the baseball as it comes off the bat after contact (mph) </span></span> at the end as an exploratory analysis, so I do not have the same analysis for it as everything else, so I am not sure of statistical significance. It is nonetheless interesting! Rookie Anthony is getting much more power in his contact than Rookie Soto. Maybe this is because of age? Maybe Anthony is not swinging at pitches he can't get good contact on? Unfortunately, bat tracking was not implemented in 2018, which means we can't look at their <span class="tooltip-term">squared-up rates<span class="tooltip-text">The percentage of swings where the exit velocity of the contact is at least 80% of what is possible, given the speed of the bat as it is swung and the speed of the pitch.</span></span>, but in 2025, Roman Anthony had a 26.7% <span class="tooltip-term">squared-up rate<span class="tooltip-text">The percentage of swings where the exit velocity of the contact is at least 80% of what is possible, given the speed of the bat as it is swung and the speed of the pitch.</span></span> (good for 60th percentile, if he was qualified) and Juan Soto clocked in at 32.5% (92nd percentile), despite Anthony having higher bat speed, <span class="tooltip-term">solid contact%<span class="tooltip-text">The percentage of pitches that a batter contacts at just under the requirements for a barrel. see <a href="https://pitcherlist.com/beyond-the-barrel-an-introduction-to-ideal-contact-rate/">here</a> for a more in depth explanation.</span></span> and <span class="tooltip-term">barrel%<span class="tooltip-text">percentage of contacted pitches hit particularly well. see <a href="https://pitcherlist.com/beyond-the-barrel-an-introduction-to-ideal-contact-rate/">here</a> for a more in depth explanation</span></span>. Note that the squared-up rate is looking at squared-up per swing, not per contact, which disadvantages Anthony due to his (statistically significantly!) higher whiff rate.</p>
 
         <h2 id="dideffects">DiD Effects</h2>
         <p>These graphs begin to provide significance for the prior analysis. Note that if the line is entirely above or below the axis, the result is significant. This is because the 95% confidence interval (meaning, 95% of the time, the result will fall within the given range) is entirely positive or negative. If it is positive, Anthony is statistically significantly more likely to do the given action. If it is negative, Soto is. When the line crosses the axis, it means that there is a greater than 5% chance (generally agreed to be the barrier for significance) that both Anthony and Soto are more likely to swing or make contact.</p>
