@@ -18,8 +18,8 @@
             position: fixed;
             top: 120px;  
             left: 20px;
-            width: 220px;
-            padding: 12px;
+            width: 140px;
+            padding: 10px;
             background: #f8f9fa;
             border-left: 3px solid #333;
             font-size: 0.9rem;
@@ -235,8 +235,8 @@
     </nav>
 
     <main>
-        <p class="contact-info"><a href="mailto:julialmargie@gmail.com">julialmargie@gmail.com</a> &mdash;
- Julia Margie &mdash; <a href="mailto:jmargie@uchicago.edu">jmargie@uchicago.edu</a></p>
+        <p class="contact-info">
+ Julia Margie &mdash; <a href="mailto:julialmargie@gmail.com">julialmargie@gmail.com</a> &mdash; <a href="mailto:jmargie@uchicago.edu">jmargie@uchicago.edu</a></p>
 
         <h1 id="header">Is Roman Anthony the next Juan Soto?</h1>
         
