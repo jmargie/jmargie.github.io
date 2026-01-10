@@ -16,7 +16,7 @@
         
         .side-menu {
             position: fixed;
-            top: 200px;  
+            top: 120px;  
             left: 20px;
             width: 220px;
             padding: 12px;
@@ -235,8 +235,8 @@
     </nav>
 
     <main>
-        <p class="contact-info"><a href="mailto:julialmargie@gmail.com">julialmargie@gmail.com</a> &mdash
- Julia Margie &mdash <a href="mailto:jmargie@uchicago.edu">jmargie@uchicago.edu</a></p>
+        <p class="contact-info"><a href="mailto:julialmargie@gmail.com">julialmargie@gmail.com</a> &mdash;
+ Julia Margie &mdash; <a href="mailto:jmargie@uchicago.edu">jmargie@uchicago.edu</a></p>
 
         <h1 id="header">Is Roman Anthony the next Juan Soto?</h1>
         
