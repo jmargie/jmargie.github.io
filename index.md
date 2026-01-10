@@ -148,10 +148,10 @@
         }
         
         .contact-info {
-            font-size: 1.5em;
+            font-size: 1.2em;
             color: #000000;
             margin-bottom: 20px;
-            text-align:center;
+            /*text-align:center;*/
         }
         
         .tooltip-term {
