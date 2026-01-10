@@ -148,8 +148,8 @@
         }
         
         .contact-info {
-            font-size: 0.9em;
-            color: #666;
+            font-size: 1.5em;
+            color: #000000;
             margin-bottom: 20px;
             text-align:center;
         }
